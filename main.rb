@@ -29,7 +29,6 @@ puts math.students.map(&:name)
 puts math.students.length
 puts st2.classroom.label
 
-
 # creating 1 book
 b1 = Book.new('BOOK1', 'AUTH1')
 # creating 2 persons
