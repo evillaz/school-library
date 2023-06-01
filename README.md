@@ -129,7 +129,7 @@ Example command:
 
 Run this command: 
 - Start Ruby ird
-- Run ruby school-library.rb
+- Run ruby main.rb
 <!--
 Example command:
 
