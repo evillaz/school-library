@@ -129,7 +129,6 @@ Example command:
   cd school-library
   npm bundle install
 ```
--->
 
 To install dependencies and use rubocop
 
