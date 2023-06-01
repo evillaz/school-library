@@ -24,6 +24,13 @@ OPTIONAL SECTIONS:
 After you're finished please remove all the comments and instructions!
 -->
 
+<div align="center">
+  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
+  <img src="logo.png" alt="logo" width="140"  height="auto" />
+  <br/>
+
+</div>
+
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -112,7 +119,6 @@ Example commands:
   cd school-library
   git clone git@github.com:evillaz/school-library.git
 ```
-<!--
 ### Install
 
 Run this command: 
@@ -120,16 +126,18 @@ Run this command:
 Example command:
 
 ```sh
-  cd space-travelers-hub
-  npm install
+  cd school-library
+  npm bundle install
 ```
 -->
+
+To install dependencies and use rubocop
 
 ### Usage
 
 Run this command: 
 - Start Ruby ird
-- Run ruby school-library.rb
+- Run ruby main.rb
 <!--
 Example command:
 
@@ -137,9 +145,12 @@ Example command:
   cd space-travelers-hub
   npm start
 ```
-
+-->
 
 ### Run tests
+
+There is no integrated tests yet!
+<!--
 
 Example command:
 
@@ -147,16 +158,16 @@ Example command:
   cd space-travelers-hub
   npm test
 ```
-
+-->
 ### Deployment
 
 
 You can deploy this project using:
 
-Visual studio code, another realiable code editor or a Web browser
+Visual studio code or with the very own ruby ird
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
- -->
+ 
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
