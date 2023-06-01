@@ -6,8 +6,6 @@ class Rental
     @book = book
     @book.rentals.push(self) if !@book.nil? && !@book.rentals.include?(self)
     @person = person
-    return unless !@person.nil? && !@person.rentals.include?(self)
-
-    @person.rentals.push(self)
+    @person.rentals.push(self) if !@person.nil? && !@person.rentals.include?(self)
   end
 end

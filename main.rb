@@ -40,15 +40,15 @@ r2 = Rental.new('RENT2', b1, p1)
 # rental with only date
 r3 = Rental.new('RENT3')
 # rental with date and person
-r4 = Rental.new('RENT4', nil, p2)
+r4 = Rental.new('RENT4', b1, p2)
 # adding books to the rentals
-b1.add_rental(r3)
-b1.add_rental(r4)
+b1.add_rental('rent1',p1)
+b1.add_rental('rent4',p2)
 # checking b1 rentals
 puts(b1.rentals.map { |rental| rental.book.title })
 # checking p1 rentals
 puts p1.rentals.map(&:date)
 # checking self assigned tental to p2
-puts(p2.rentals.map { |rental| rental.book.title })
+puts(p2.rentals.map {|rental| rental.book.title })
 ###
 puts r1.person.name, r2.person.name
