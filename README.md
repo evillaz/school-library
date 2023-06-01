@@ -50,7 +50,7 @@ After you're finished please remove all the comments and instructions!
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 [School Library] <a name="about-project"></a>
-**[School Library]** 
+**[School Library]** Imagine that you are the librarian of OOP University, and you need a tool to record what books are in the library and who borrows them. 
 
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -83,7 +83,10 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- **[]**
+- **[Add new students or teachers.]**
+- **[Add new books.]**
+- **[Save records of who borrowed a given book and when.]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -168,7 +171,13 @@ Visual studio code, another realiable code editor or a Web browser
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **[Not for now]**
+- **[Use the "Decorator" design pattern.]**
+- **[Set up associations.]**
+- **[Add basic UI.]**
+- **[Refactor your code.]**
+- **[Preserve data.]**
+- **[Unit tests.]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
