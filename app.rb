@@ -12,7 +12,9 @@ class App
 
   # Functionality #1
   def list_books
-    @books.map { |book| puts book_details(book) }
+    @books.each do |book|
+      puts "Title: \"#{book.author}\" by Author: #{book.title}"  # Reversed book title and author
+    end
   end
 
   def book_details(book)
