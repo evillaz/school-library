@@ -14,14 +14,14 @@ capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
 puts capitalized_trimmed_person.correct_name
 
 math = Classroom.new('math')
-st1 = Student.new(20, 'max')
+st1 = Student.new(20, 'max', false)
 st1.classroom = math
 puts st1.name
 puts st1.classroom.label
 puts st1.classroom.students.map(&:name)
 
-st2 = Student.new(20, 'mex')
-st3 = Student.new(20, 'mix')
+st2 = Student.new(20, 'mex', false)
+st3 = Student.new(20, 'mix', false)
 math.add_student(st2)
 math.add_student(st3)
 
