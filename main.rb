@@ -7,7 +7,7 @@ require_relative 'rental'
 app = App.new
 
 def display_options
-  puts 'Please choose an option by enterin a number'
+  puts 'Please choose an option by entering a number'
   puts '1 - List all books'
   puts '2 - List all people'
   puts '3 - Create a person'
@@ -19,13 +19,13 @@ end
 
 loop do
   display_options
-  option = gets.chomp
+  option = gets.chomp.to_i
 
-  case option.to_i
+  case option
   when 1
-    app.list_books
+    app.books.list
   when 2
-    app.list_people
+    app.people.list
   when 3
     app.create_person
   when 4
