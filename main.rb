@@ -15,6 +15,7 @@ def display_options
   puts '5 - Create a rental'
   puts '6 - List all rentals for a given person id'
   puts '7 - Exit'
+  puts '8 - preserve data'
 end
 
 loop do
@@ -37,6 +38,9 @@ loop do
   when 7
     puts 'Thank you for using this app'
     break
+  when 8
+    app.preserve_data
+    puts 'data save'
   else
     puts 'Invalid option. Please try again'
   end
