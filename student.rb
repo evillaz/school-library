@@ -16,4 +16,10 @@ class Student < Person
   def play_hooky
     '¯\(ツ)/¯'
   end
+
+  def to_json(*args)
+    object = JSON.parse(super)
+    object['classroom'] = @classroom
+    object.to_json(*args)
+  end
 end

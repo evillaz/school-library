@@ -29,6 +29,15 @@ class Person < Nameable
     "[#{self.class}] Name: #{@name}, ID: #{@id}, Age: #{@age}"
   end
 
+  def to_json(*args)
+    { 
+      'class' => self.class,
+      'name' => @name,
+      'age' => @age,
+      'parent_permission' => @parent_permission,
+    }.to_json(*args)
+  end
+
   private
 
   def of_age?

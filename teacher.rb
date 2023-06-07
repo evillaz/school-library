@@ -11,4 +11,10 @@ class Teacher < Person
   def can_use_services?
     true
   end
+
+  def to_json(*args)
+    object = JSON.parse(super)
+    object['specialization'] = @specialization
+    object.to_json(*args)
+  end
 end

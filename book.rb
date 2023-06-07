@@ -14,4 +14,15 @@ class Book
   def details
     "Title: \"#{@title}\" by Author: #{@author}"
   end
+
+  def to_json(*args)
+    {
+      'title' => @title,
+      'author' => @author
+    }.to_json(*args)
+  end
+
+  def self.from_json(object)
+    self.new(object['title'], object['author'])
+  end
 end

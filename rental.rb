@@ -8,4 +8,12 @@ class Rental
     @person = person
     @person.rentals.push(self) if !@person.nil? && !@person.rentals.include?(self)
   end
+
+  def to_json(*_args)
+    {
+      'date' => @date,
+      'book' => @book.to_json,
+      'person' => @person.to_json
+    }.to_json(*_args)
+  end
 end
