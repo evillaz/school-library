@@ -1,7 +1,41 @@
-class App
+# Defined a class to hanlde the books and persons created
+class Container
   def initialize
-    @books = []
-    @people = []
+    @array = []
+  end
+
+  def push(element)
+    @array.push(element)
+  end
+
+  def list
+    @array.each do |element|
+      puts element.details
+    end
+  end
+
+  def list_with_index
+    @array.each_with_index do |element, index|
+      puts "#{index}) #{element.details}"
+    end
+  end
+
+  def get_element(index)
+    @array[index]
+  end
+
+  def find(id)
+    @array.find { |p| p.id == id }
+  end
+end
+
+# Main app class
+class App
+  attr_accessor :books, :people
+
+  def initialize
+    @books = Container.new
+    @people = Container.new
   end
 
   # Method to get inputs and recycle code
@@ -10,25 +44,7 @@ class App
     gets.chomp
   end
 
-  # Functionality #1
-  def list_books
-    @books.map { |book| puts book_details(book) }
-  end
-
-  def book_details(book)
-    "Title: \"#{book.title}\" by Author: #{book.author}"
-  end
-
-  # Functionality #2
-  def list_people
-    @people.map { |person| puts person_details(person) }
-  end
-
-  def person_details(person)
-    "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-  end
-
-  # Functionality #3
+  # Create a person
   def create_person
     type = get_input('Do you want to create a student(1) or a teacher(2)? [Input the number]: ').to_i
     age = get_input('Age: ').to_i
@@ -41,6 +57,7 @@ class App
     puts 'Person created succesfully'
   end
 
+  # Helper methods
   def create_student(age, name)
     if age < 18
       permission = get_input('Has parent permission? [Y/N]: ').capitalize
@@ -58,7 +75,7 @@ class App
     @people.push(teacher)
   end
 
-  # Functionality #4
+  # Create a book
   def create_book
     title = get_input('Title: ')
     author = get_input('Author: ')
@@ -67,34 +84,23 @@ class App
     puts 'Book created succesfully'
   end
 
-  # Functionality #5
+  # Create rental selecting a book and a person
   def create_rental
-    puts 'Select a book from the following list by number'
-    list_books_with_index
-    selected = gets.chomp.to_i
-    book = @books[selected]
-    puts 'Select a person from the following list by number (not by id)'
-    list_people_with_index
-    selected = gets.chomp.to_i
-    person = @people[selected]
+    book = select_item('Select a book from the following list by number', @books)
+    person = select_item('Select a person from the following list by number (not by id)', @people)
     validate_person(book, person)
   end
 
-  def list_books_with_index
-    @books.each_with_index do |book, index|
-      puts "#{index}) #{book_details(book)}"
-    end
-  end
-
-  def list_people_with_index
-    @people.each_with_index do |person, index|
-      puts "#{index}) #{person_details(person)}"
-    end
+  # Helper methods
+  def select_item(prompt, array)
+    puts prompt
+    array.list_with_index
+    selected = gets.chomp.to_i
+    array.get_element(selected)
   end
 
   def create_rental_object(book, person)
-    print 'Date: '
-    date = gets.chomp
+    date = get_input('Date: ')
     Rental.new(date, book, person)
     puts 'Rental created'
   end
@@ -107,13 +113,13 @@ class App
     end
   end
 
-  # Functionality #6
+  # Search rental by id
   def rentals_by_id
     id = get_input('ID of person: ').to_i
-    person = @people.find { |p| p.id == id }
+    person = @people.find(id)
     if person
       puts 'Rentals:'
-      person.rentals.map { |rental| "Date: #{rental.date}, #{book_details(rental.book)}" }
+      person.rentals.map { |rental| "Date: #{rental.date}, #{rental.book.details}" }
     else
       puts 'Invalid ID try again'
     end

@@ -177,6 +177,12 @@ Visual studio code or with the very own ruby ird
 - Twitter: [@evillazz](https://twitter.com/evillazz)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/eduardo-villarreal-144a8925a)
 
+👤 **Matee Safi**
+
+- GitHub: [@matee-safi](https://github.com/matee-safi)
+- Twitter: [@matee_safi](https://twitter.com/matee_safi)
+- LinkedIn: [Matee Safi](https://linkedin.com/in/matee-safi)
+
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
