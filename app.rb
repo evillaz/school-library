@@ -37,14 +37,22 @@ class Container
     end
   end
 
-  def load(filename)
+  def load_books(filename)
     file_source = File.read(filename)
     data = JSON.parse(file_source)
-    puts data
-  #  data.each do |element|
-  #    book = Book.from_json(element)
-  #    @array.push(book)
-  #  end
+    data.each do |element|
+      book = Book.from_json(element)
+      puts book.details
+    end
+  end
+
+  def load_people(filename)
+    file_source = File.read(filename)
+    data = JSON.parse(file_source)
+    data.each do |element|
+      person = Person.from_json(element)
+      puts person.details
+    end
   end
 end
 

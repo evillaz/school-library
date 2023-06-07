@@ -22,7 +22,7 @@ class Person < Nameable
   end
 
   def add_rental(date, book)
-    Rental.new(date, book, self)
+    Rental.new(date, book, self, )
   end
 
   def details
@@ -31,12 +31,16 @@ class Person < Nameable
 
   def to_json(*args)
     { 
-      'class' => self.class,
+      'class' => @class,
       'name' => @name,
       'age' => @age,
       'parent_permission' => @parent_permission,
     }.to_json(*args)
   end
+
+  def self.from_json(object)
+    self.new(object['age'], object['name'], parent_permission: object['parent_permission'])
+  end  
 
   private
 

@@ -24,9 +24,9 @@ loop do
 
   case option
   when 1
-    app.books.list
+    app.books.load_books('./books.json')
   when 2
-    app.people.list
+    app.people.load_people('./people.json')
   when 3
     app.create_person
   when 4
