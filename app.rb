@@ -1,4 +1,6 @@
 # Defined a class to hanlde the books and persons created
+require 'json'
+
 class Container
   def initialize
     @array = []
@@ -27,6 +29,23 @@ class Container
   def find(id)
     @array.find { |p| p.id == id }
   end
+
+  def save(filename)
+    data = @array.to_json
+    File.open(filename, 'w') do |file|
+      file.write(data)
+    end
+  end
+
+  def load(filename)
+    file_source = File.read(filename)
+    data = JSON.parse(file_source)
+    puts data
+  #  data.each do |element|
+  #    book = Book.from_json(element)
+  #    @array.push(book)
+  #  end
+  end
 end
 
 # Main app class
@@ -36,6 +55,7 @@ class App
   def initialize
     @books = Container.new
     @people = Container.new
+    @rentals = Container.new
   end
 
   # Method to get inputs and recycle code
@@ -101,7 +121,8 @@ class App
 
   def create_rental_object(book, person)
     date = get_input('Date: ')
-    Rental.new(date, book, person)
+    rental = Rental.new(date, book, person)
+    @rentals.push(rental)
     puts 'Rental created'
   end
 
@@ -123,5 +144,11 @@ class App
     else
       puts 'Invalid ID try again'
     end
+  end
+
+  def preserve_data
+    @people.save('people.json')
+    @books.save('books.json')
+    @rentals.save('rentals.json')
   end
 end
