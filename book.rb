@@ -23,6 +23,6 @@ class Book
   end
 
   def self.from_json(object)
-    self.new(object['title'], object['author'])
+    new(object['title'], object['author'])
   end
 end
