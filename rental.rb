@@ -9,11 +9,11 @@ class Rental
     @person.rentals.push(self) if !@person.nil? && !@person.rentals.include?(self)
   end
 
-  def to_json(*_args)
+  def to_json(*args)
     {
       'date' => @date,
       'book' => @book.to_json,
       'person' => @person.to_json
-    }.to_json(*_args)
+    }.to_json(*args)
   end
 end

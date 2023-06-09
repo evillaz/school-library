@@ -46,8 +46,8 @@ class PreserveData
     parsed_book = JSON.parse(rental['book'])
     rental_book = ''
     @books.array.each do |book|
-      if  book.title == parsed_book['title'] &&
-          book.author == parsed_book['author']
+      if book.title == parsed_book['title'] &&
+         book.author == parsed_book['author']
         rental_book = book
       end
     end
