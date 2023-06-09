@@ -1,8 +1,7 @@
 require_relative 'nameable'
 
 class Person < Nameable
-  attr_accessor :name, :age, :rentals, :parent_permission
-  attr_reader :id
+  attr_accessor :id, :name, :age, :rentals, :parent_permission
 
   def initialize(age, name, parent_permission: true)
     super()
@@ -22,7 +21,7 @@ class Person < Nameable
   end
 
   def add_rental(date, book)
-    Rental.new(date, book, self, )
+    Rental.new(date, book, self)
   end
 
   def details
@@ -30,17 +29,20 @@ class Person < Nameable
   end
 
   def to_json(*args)
-    { 
-      'class' => @class,
+    {
+      'id' => @id,
+      'class' => self.class,
       'name' => @name,
       'age' => @age,
-      'parent_permission' => @parent_permission,
+      'parent_permission' => @parent_permission
     }.to_json(*args)
   end
 
   def self.from_json(object)
-    self.new(object['age'], object['name'], parent_permission: object['parent_permission'])
-  end  
+    person = new(object['age'], object['name'], parent_permission: object['parent_permission'])
+    person.id = object['id'].to_i
+    person
+  end
 
   private
 
