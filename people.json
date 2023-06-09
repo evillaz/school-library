@@ -1,1 +1,1 @@
-[{"class":"Teacher","name":"aaa","age":111,"parent_permission":true,"specialization":"aaa"},{"class":"Teacher","name":"ccc","age":222,"parent_permission":true,"specialization":"ccc"},{"class":"Teacher","name":"fff","age":333,"parent_permission":true,"specialization":"fff"}]
+[{"id":141,"class":"Teacher","name":"1","age":1,"parent_permission":true,"specialization":"1"},{"id":45,"class":"Student","name":"wq","age":12,"parent_permission":{"parent_permission":{"parent_permission":true}}}]

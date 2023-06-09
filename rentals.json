@@ -1,1 +1,1 @@
-[{"date":"20203","book":"{\"title\":\"sd\",\"author\":\"d\"}","person":"{\"class\":\"Teacher\",\"name\":\"asd\",\"age\":12,\"parent_permission\":true,\"specialization\":\"sd\"}"}]
+[{"date":"123","book":"{\"title\":\"1\",\"author\":\"1\"}","person":"{\"id\":141,\"class\":\"Teacher\",\"name\":\"1\",\"age\":1,\"parent_permission\":true,\"specialization\":\"1\"}"},{"date":"23","book":"{\"title\":\"2\",\"author\":\"2\"}","person":"{\"id\":45,\"class\":\"Student\",\"name\":\"wq\",\"age\":12,\"parent_permission\":{\"parent_permission\":{\"parent_permission\":true}}}"}]
