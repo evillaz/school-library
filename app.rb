@@ -1,41 +1,13 @@
-# Defined a class to hanlde the books and persons created
-class Container
-  def initialize
-    @array = []
-  end
-
-  def push(element)
-    @array.push(element)
-  end
-
-  def list
-    @array.each do |element|
-      puts element.details
-    end
-  end
-
-  def list_with_index
-    @array.each_with_index do |element, index|
-      puts "#{index}) #{element.details}"
-    end
-  end
-
-  def get_element(index)
-    @array[index]
-  end
-
-  def find(id)
-    @array.find { |p| p.id == id }
-  end
-end
-
+require 'json'
 # Main app class
 class App
-  attr_accessor :books, :people
+  attr_accessor :books, :people, :data_preserver
 
   def initialize
     @books = Container.new
     @people = Container.new
+    @rentals_container = Container.new
+    @data_preserver = PreserveData.new(@people, @books, @rentals_container)
   end
 
   # Method to get inputs and recycle code
@@ -101,7 +73,8 @@ class App
 
   def create_rental_object(book, person)
     date = get_input('Date: ')
-    Rental.new(date, book, person)
+    rental = Rental.new(date, book, person)
+    @rentals_container.push(rental)
     puts 'Rental created'
   end
 
