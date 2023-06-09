@@ -17,4 +17,8 @@ class Teacher < Person
     object['specialization'] = @specialization
     object.to_json(*args)
   end
+
+  def self.from_json(object)
+    new(object['age'], object['name'], object['specialization'], parent_permission: object['parent_permission'])
+  end
 end
