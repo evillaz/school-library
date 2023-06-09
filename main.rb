@@ -15,8 +15,9 @@ def display_options
   puts '5 - Create a rental'
   puts '6 - List all rentals for a given person id'
   puts '7 - Exit'
-  puts '8 - preserve data'
 end
+
+app.load_data
 
 loop do
   display_options
@@ -24,9 +25,9 @@ loop do
 
   case option
   when 1
-    app.books.load_books('./books.json')
+    app.books.list
   when 2
-    app.people.load_people('./people.json')
+    app.people.list
   when 3
     app.create_person
   when 4
@@ -36,11 +37,9 @@ loop do
   when 6
     puts app.rentals_by_id
   when 7
+    app.preserve_data
     puts 'Thank you for using this app'
     break
-  when 8
-    app.preserve_data
-    puts 'data save'
   else
     puts 'Invalid option. Please try again'
   end
