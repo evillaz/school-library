@@ -4,6 +4,8 @@ require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
 require_relative 'rental'
+require_relative 'container'
+require_relative 'preserve_data'
 app = App.new
 
 def display_options
@@ -17,7 +19,7 @@ def display_options
   puts '7 - Exit'
 end
 
-app.load_data
+app.data_preserver.load_data
 
 loop do
   display_options
@@ -37,7 +39,7 @@ loop do
   when 6
     puts app.rentals_by_id
   when 7
-    app.preserve_data
+    app.data_preserver.preserve_data
     puts 'Thank you for using this app'
     break
   else
