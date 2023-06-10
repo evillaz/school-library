@@ -9,4 +9,14 @@ class Solver
     end
     return result
   end
+
+  def reverse(word)
+    i = word.length - 1
+    reverse_word = ''
+    while i >= 0
+      reverse_word += word[i]
+      i -= 1
+    end
+    reverse_word
+  end
 end
