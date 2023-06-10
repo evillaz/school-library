@@ -148,16 +148,12 @@ Example command:
 
 ### Run tests
 
-There is no integrated tests yet!
-<!--
-
 Example command:
 
 ```sh
-  cd space-travelers-hub
-  npm test
+  cd spec
+rspec *spec.rb
 ```
--->
 ### Deployment
 
 
