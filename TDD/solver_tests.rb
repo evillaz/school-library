@@ -22,4 +22,22 @@ RSpec.describe Solver do
       expect(subject.reverse('hello')).to eq('olleh')
     end
   end
+
+  describe '#fizzbuzz' do
+    it 'returns "fizz" for numbers divisible by 3' do
+      expect(subject.fizzbuzz(9)).to eq('fizz')
+    end
+
+    it 'returns "buzz" for numbers divisible by 5' do
+      expect(subject.fizzbuzz(25)).to eq('buzz')
+    end
+
+    it 'returns "fizzbuzz" for numbers divisible by both 3 and 5' do
+      expect(subject.fizzbuzz(15)).to eq('fizzbuzz')
+    end
+
+    it 'returns the number as a string for other cases' do
+      expect(subject.fizzbuzz(7)).to eq('7')
+    end
+  end
 end
